@@ -643,7 +643,7 @@ namespace UnityEditor.Rendering.HighDefinition
                 m_RenderingPassValues.Add((int)HDRenderQueue.OpaqueRenderQueue.AfterPostProcessing);
             }
 
-            if ((RenderPipelineManager.currentPipeline as HDRenderPipeline).rayTracingSupported)
+            if (RenderPipelineManager.currentPipeline != null && RenderPipelineManager.currentPipeline is HDRenderPipeline && (RenderPipelineManager.currentPipeline as HDRenderPipeline).rayTracingSupported)
             {
                 m_RenderingPassNames.Add("Raytracing");
                 m_RenderingPassValues.Add((int)HDRenderQueue.OpaqueRenderQueue.Raytracing);
